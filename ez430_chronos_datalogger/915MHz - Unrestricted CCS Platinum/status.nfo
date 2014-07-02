@@ -1,0 +1,147 @@
+MSP430 C/C++ Optimizer                  v4.2.1
+Build Number 1NGPW-KDADEMDK-RTARQ-WAR-ZACIF_U_S_R
+
+		======File-level Analysis Summary======
+
+
+extern void display_R_simb() is called from 14 sites in this file.
+    It appears to be inlineable (size = 16 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_symbol() (2 times)
+
+extern void display_casa() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+	display_R_simb() (2 times)
+
+extern void display_esporte() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+	display_R_simb() (2 times)
+
+extern void display_fora() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+	display_R_simb() (2 times)
+
+extern void display_lazer() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+	display_R_simb() (2 times)
+
+extern void display_smart() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+	display_R_simb() (2 times)
+
+extern void display_sono() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+	display_R_simb() (2 times)
+
+extern void display_trabalho() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+	display_R_simb() (2 times)
+
+
+These functions may be recursive:
+	display_casa()
+	display_esporte()
+	display_fora()
+	display_lazer()
+	display_smart()
+	display_sono()
+	display_trabalho()
+	display_R_simb()
+
+Making this function inlineable: display_R_simb()
+
+These external functions are called but not defined here:
+	display_chars()
+	display_symbol()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void display_R_simb() is called from 14 sites in this file.
+    It appears to be inlineable (size = 16 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_trabalho() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_R_simb() (2 times)
+
+==============================================================================
+
+extern void display_sono() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_R_simb() (2 times)
+
+==============================================================================
+
+extern void display_smart() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_R_simb() (2 times)
+
+==============================================================================
+
+extern void display_lazer() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_R_simb() (2 times)
+
+==============================================================================
+
+extern void display_fora() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_R_simb() (2 times)
+
+==============================================================================
+
+extern void display_esporte() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_R_simb() (2 times)
+
+==============================================================================
+
+extern void display_casa() is called from 0 sites in this file.
+    It appears to be inlineable (size = 26 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_R_simb() (2 times)
+
+== END OF INFO OUTPUT==

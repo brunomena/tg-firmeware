@@ -1,0 +1,118 @@
+MSP430 C/C++ Optimizer                  v4.2.1
+Build Number 1NGPW-KDADEMDK-RTARQ-WAR-ZACIF_U_S_R
+
+		======File-level Analysis Summary======
+
+
+extern void i2c_delay() is called from 19 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void i2c_init() is called from 0 sites in this file.
+    It appears to be inlineable (size = 9 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Timer0_A4_Delay() (1 times)
+
+extern unsigned char i2c_read() is called from 3 sites in this file.
+    It appears to be inlineable (size = 85 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	i2c_delay() (4 times)
+
+extern unsigned i2c_read_register() is called from 0 sites in this file.
+    It appears to be inlineable (size = 48 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	i2c_read() (3 times)
+	i2c_write() (2 times)
+	i2c_sda() (5 times)
+
+extern unsigned char i2c_sda() is called from 9 sites in this file.
+    It appears to be inlineable (size = 145 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	i2c_delay() (13 times)
+
+extern void i2c_write() is called from 4 sites in this file.
+    It appears to be inlineable (size = 63 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	i2c_delay() (2 times)
+
+extern unsigned char i2c_write_register() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	i2c_write() (2 times)
+	i2c_sda() (4 times)
+
+
+These functions may be recursive:
+	i2c_init()
+
+These external functions are called but not defined here:
+	Timer0_A4_Delay()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void i2c_delay() is called from 19 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char i2c_sda() is called from 9 sites in this file.
+    It appears to be inlineable (size = 145 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	i2c_delay() (13 times)
+
+==============================================================================
+
+extern void i2c_write() is called from 4 sites in this file.
+    It appears to be inlineable (size = 63 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	i2c_delay() (2 times)
+
+==============================================================================
+
+extern unsigned char i2c_write_register() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	i2c_sda() (4 times)
+	i2c_write() (2 times)
+
+==============================================================================
+
+extern unsigned char i2c_read() is called from 3 sites in this file.
+    It appears to be inlineable (size = 85 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	i2c_delay() (4 times)
+
+==============================================================================
+
+extern unsigned i2c_read_register() is called from 0 sites in this file.
+    It appears to be inlineable (size = 48 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	i2c_sda() (5 times)
+	i2c_write() (2 times)
+	i2c_read() (3 times)
+
+==============================================================================
+
+extern void i2c_init() is called from 0 sites in this file.
+    It appears to be inlineable (size = 9 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+== END OF INFO OUTPUT==
