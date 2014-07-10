@@ -7,6 +7,7 @@ LIB_SRCS += \
 ../driver/ez430_chronos_datalogger_drivers.lib 
 
 C_SRCS += \
+../driver/I2C.c \
 ../driver/as.c \
 ../driver/bmp_as.c \
 ../driver/bmp_ps.c \
@@ -18,6 +19,7 @@ C_SRCS += \
 ../driver/rf1a.c 
 
 OBJS += \
+./driver/I2C.obj \
 ./driver/as.obj \
 ./driver/bmp_as.obj \
 ./driver/bmp_ps.obj \
@@ -29,6 +31,7 @@ OBJS += \
 ./driver/rf1a.obj 
 
 C_DEPS += \
+./driver/I2C.pp \
 ./driver/as.pp \
 ./driver/bmp_as.pp \
 ./driver/bmp_ps.pp \
@@ -40,6 +43,7 @@ C_DEPS += \
 ./driver/rf1a.pp 
 
 C_DEPS__QUOTED += \
+"driver\I2C.pp" \
 "driver\as.pp" \
 "driver\bmp_as.pp" \
 "driver\bmp_ps.pp" \
@@ -51,6 +55,7 @@ C_DEPS__QUOTED += \
 "driver\rf1a.pp" 
 
 OBJS__QUOTED += \
+"driver\I2C.obj" \
 "driver\as.obj" \
 "driver\bmp_as.obj" \
 "driver\bmp_ps.obj" \
@@ -62,6 +67,7 @@ OBJS__QUOTED += \
 "driver\rf1a.obj" 
 
 C_SRCS__QUOTED += \
+"../driver/I2C.c" \
 "../driver/as.c" \
 "../driver/bmp_as.c" \
 "../driver/bmp_ps.c" \

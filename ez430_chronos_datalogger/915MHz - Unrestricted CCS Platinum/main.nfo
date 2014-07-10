@@ -42,7 +42,7 @@ extern void init_application() is called from 1 sites in this file.
 	SetVCore() (1 times)
 
 extern void init_global_variables() is called from 1 sites in this file.
-    It appears to be inlineable (size = 49 units)
+    It appears to be inlineable (size = 46 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	reset_datalog() (1 times)
@@ -91,7 +91,7 @@ extern void to_lpm() is called from 1 sites in this file.
 	_bis_SR_register() (1 times)
 
 extern void wakeup_event() is called from 1 sites in this file.
-    It appears to be inlineable (size = 205 units)
+    It appears to be inlineable (size = 202 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	clear_display() (1 times)
@@ -158,7 +158,7 @@ These external functions are called but not defined here:
 ==============================================================================
 
 extern void wakeup_event() is called from 1 sites in this file.
-    It appears to be inlineable (size = 205 units)
+    It appears to be inlineable (size = 202 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	<NONE>
@@ -198,7 +198,7 @@ extern void init_application() is called from 1 sites in this file.
 ==============================================================================
 
 extern void init_global_variables() is called from 1 sites in this file.
-    It appears to be inlineable (size = 49 units)
+    It appears to be inlineable (size = 46 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	read_calibration_values() (1 times)

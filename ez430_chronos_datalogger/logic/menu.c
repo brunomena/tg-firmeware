@@ -101,6 +101,7 @@ u8 update_temperature(void)
 
 // Line1 - Time
 const struct menu menu_L1_Time = {
+	//&menu_L1_Time,
     FUNCTION(sx_time),             // direct function
     FUNCTION(dummy),               // sub menu function
     FUNCTION(display_time),        // display function
@@ -192,7 +193,7 @@ const struct menu menu_L2_Smart = {
 	//&menu_L2_Esporte,
     FUNCTION(sx_date),             // direct function
     FUNCTION(dummy),               // sub menu function
-    FUNCTION(display_Smart),        // display function
+    FUNCTION(display_Smart),       // display function
     FUNCTION(update_time),         // new display data
     &menu_L2_Fora,
 };
@@ -200,10 +201,10 @@ const struct menu menu_L2_Smart = {
 // Line2 - Fora do Pulso
 const struct menu menu_L2_Fora = {
 	//&menu_L2_Smart,
-    FUNCTION(sx_date),             // direct function
+    FUNCTION(sx_date),            // direct function
     FUNCTION(dummy),               // sub menu function
     FUNCTION(display_Fora),        // display function
-    FUNCTION(update_time),         // new display data
+    FUNCTION(display_time),         // new display data
     &menu_L2_Sono,
 };
 

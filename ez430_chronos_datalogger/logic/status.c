@@ -8,13 +8,17 @@
 #include "status.h"
 #include "display.h"
 #include "I2C.h"
+#include "timer.h"
+#include "rfsimpliciti.h"
+#include "ports.h"
 
 void display_R_simb(u8 mode);
 
 u8 mask_status_selecionado;
 u8 status_selecionado_gravando;
 unsigned char status_gravando;
-u8 cont_seconds;
+u8 mdisplay = 0;
+u8 check = 0;
 
 /*
  * Atualiza segunda linha com informações das atividades
@@ -139,9 +143,8 @@ void display_Esporte(u8 line, u8 update)
 ///////////////////////////////////////////////////////////////////////////////
 void display_Smart(u8 line, u8 update)
 {
-	u8 check = 0;
-	mask_status_selecionado = 0x06;
 
+	mask_status_selecionado = 0x06;
 	// Atualzia R simbolo
 	if(status_selecionado_gravando == 0x06)
 	{
@@ -158,28 +161,49 @@ void display_Smart(u8 line, u8 update)
     if (update == DISPLAY_LINE_UPDATE_FULL)
     {
         display_chars(LCD_SEG_L2_4_0, (u8 *) "SMART ", SEG_ON);
+        	if (BUTTON_DOWN_IS_PRESSED){		//espera apertar o botao DOWN
 
-        if (cont_seconds == 2){		//espera dar 2 segundos ai troca de tela
-        	display_chars(LCD_SEG_L2_4_0, (u8 *) "001", SEG_ON);		//mostra o codigo do relogio
+        		// check = i2c_read_register(0x04 << 1, I2C_8BIT_ACCESS);		//checa se esta concetado ao roteador
+        		// 100msec delay to guarantee stable operation
+            	// Timer0_A4_Delay(CONV_MS_TO_TICKS(100));
 
-        	 // check = i2c_read_register(0x04 << 1, I2C_8BIT_ACCESS);		//checa se esta concetado ao roteador
-        	 // 100msec delay to guarantee stable operation
-        	 // Timer0_A4_Delay(CONV_MS_TO_TICKS(100));
+        		display_symbol(LCD_SYMB_AM, SEG_OFF);
+        		display_chars(LCD_SEG_L1_3_0, (u8 *) "0001", SEG_ON);		//mostra o codigo do relogio
+        		mdisplay = 1;
 
-        	if (check == 1)		//checa se esta conectado ou desconectado
-        	display_chars(LCD_SEG_L1_3_0, (u8 *) "CONEC", SEG_ON);
-        	else {
-        		display_chars(LCD_SEG_L1_3_0, (u8 *) "DESCT", SEG_ON);
-        	}
+        			if (check == 1)												//checa se esta conectado ou desconectado
+        				display_chars(LCD_SEG_L2_4_0, (u8 *) "CONEC", SEG_ON);
+        			else
+        				display_chars(LCD_SEG_L2_4_0, (u8 *) "DESCT", SEG_ON);
         }
-    cont_seconds = 0;
-   }
+        	if (mdisplay == 1){
+        		display_chars(LCD_SEG_L1_3_0, (u8 *) "0001", SEG_ON);
+        		if (check == 1)												//checa se esta conectado ou desconectado
+        			display_chars(LCD_SEG_L2_4_0, (u8 *) "CONEC", SEG_ON);
+        		else
+        		    display_chars(LCD_SEG_L2_4_0, (u8 *) "DESCT", SEG_ON);
+        	}
+        	if (BUTTON_UP_IS_PRESSED){							//espera apertar o botao UP
+        		//i2c_write_register(0x04 << 1, 0x00);			//dado para comecar o smartconfig
+        		// 100msec delay to guarantee stable operation
+        		//Timer0_A4_Delay(CONV_MS_TO_TICKS(100));
+        		//fazer mostrar o IP
+
+        		// check = i2c_read_register(0x04 << 1, I2C_8BIT_ACCESS);		//checa se esta concetado ao roteador
+        		// 100msec delay to guarantee stable operation
+        		// Timer0_A4_Delay(CONV_MS_TO_TICKS(100));
+
+        	}
+    }
+    	display.flag.line1_full_update = 1;
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 void display_Fora(u8 line, u8 update)
 {
-	mask_status_selecionado = 0x07;
 
+	mask_status_selecionado = 0x07;
+	check =0;
+	mdisplay =0;
 	// Atualiza R simbolo
 	if(status_selecionado_gravando == 0x07)
 	{

@@ -1,15 +1,15 @@
 # FIXED
 
 logic/menu.obj: ../logic/menu.c
-logic/menu.obj: C:/Users/Bruno/workspace\ atual/ez430_chronos_datalogger/include/project.h
+logic/menu.obj: C:/Users/Bruno/git/tg-firmeware/ez430_chronos_datalogger/include/project.h
 logic/menu.obj: C:/ti/ccsv5/ccs_base/msp430/include/cc430x613x.h
 logic/menu.obj: C:/ti/ccsv5/ccs_base/msp430/include/in430.h
 logic/menu.obj: C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include/intrinsics.h
-logic/menu.obj: C:/Users/Bruno/workspace\ atual/ez430_chronos_datalogger/bluerobin/bm.h
+logic/menu.obj: C:/Users/Bruno/git/tg-firmeware/ez430_chronos_datalogger/bluerobin/bm.h
 logic/menu.obj: C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include/stddef.h
 logic/menu.obj: C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include/limits.h
 logic/menu.obj: C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include/float.h
-logic/menu.obj: C:/Users/Bruno/workspace\ atual/ez430_chronos_datalogger/driver/display.h
+logic/menu.obj: C:/Users/Bruno/git/tg-firmeware/ez430_chronos_datalogger/driver/display.h
 logic/menu.obj: ../logic/menu.h
 logic/menu.obj: ../logic/user.h
 logic/menu.obj: ../logic/clock.h
@@ -25,15 +25,15 @@ logic/menu.obj: ../logic/rfbsl.h
 logic/menu.obj: ../logic/status.h
 
 ../logic/menu.c: 
-C:/Users/Bruno/workspace\ atual/ez430_chronos_datalogger/include/project.h: 
+C:/Users/Bruno/git/tg-firmeware/ez430_chronos_datalogger/include/project.h: 
 C:/ti/ccsv5/ccs_base/msp430/include/cc430x613x.h: 
 C:/ti/ccsv5/ccs_base/msp430/include/in430.h: 
 C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include/intrinsics.h: 
-C:/Users/Bruno/workspace\ atual/ez430_chronos_datalogger/bluerobin/bm.h: 
+C:/Users/Bruno/git/tg-firmeware/ez430_chronos_datalogger/bluerobin/bm.h: 
 C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include/stddef.h: 
 C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include/limits.h: 
 C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include/float.h: 
-C:/Users/Bruno/workspace\ atual/ez430_chronos_datalogger/driver/display.h: 
+C:/Users/Bruno/git/tg-firmeware/ez430_chronos_datalogger/driver/display.h: 
 ../logic/menu.h: 
 ../logic/user.h: 
 ../logic/clock.h: 

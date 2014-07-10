@@ -99,6 +99,7 @@ S64_DEPS__QUOTED :=
 SUBDIRS := \
 . \
 simpliciti \
+logic/versor \
 logic \
 driver \
 bluerobin \

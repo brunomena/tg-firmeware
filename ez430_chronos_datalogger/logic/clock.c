@@ -52,7 +52,7 @@
 #include "user.h"
 #include "bluerobin.h"
 #include "date.h"
-
+#include "status.h"
 // *************************************************************************************************
 // Prototypes section
 void reset_clock(void);

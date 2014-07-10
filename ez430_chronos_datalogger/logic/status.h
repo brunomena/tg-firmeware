@@ -10,8 +10,6 @@
 
 typedef unsigned char u8;
 
-extern u8 cont_seconds;
-
 extern void display_R_simb			(u8 mode);
 extern void display_Sono			(u8 line, u8 update);
 extern void display_Casa		    (u8 line, u8 update);

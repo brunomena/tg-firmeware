@@ -17,8 +17,10 @@ $(GEN_CMDS__FLAG) \
 "./driver/bmp_ps.obj" \
 "./driver/bmp_as.obj" \
 "./driver/as.obj" \
+"./driver/I2C.obj" \
 "./logic/user.obj" \
 "./logic/temperature.obj" \
+"./logic/status.obj" \
 "./logic/rfsimpliciti.obj" \
 "./logic/rfbsl.obj" \
 "./logic/menu.obj" \
@@ -29,6 +31,7 @@ $(GEN_CMDS__FLAG) \
 "./logic/battery.obj" \
 "./logic/altitude.obj" \
 "./logic/acceleration.obj" \
+"./logic/versor/analise.obj" \
 "./main.obj" \
 "../lnk_cc430f6137.cmd" \
 "../simpliciti/CC430_End_Device_915MHz.lib" \
@@ -45,11 +48,13 @@ RMDIR := RMDIR /S/Q
 -include sources.mk
 -include subdir_vars.mk
 -include simpliciti/subdir_vars.mk
+-include logic/versor/subdir_vars.mk
 -include logic/subdir_vars.mk
 -include driver/subdir_vars.mk
 -include bluerobin/subdir_vars.mk
 -include subdir_rules.mk
 -include simpliciti/subdir_rules.mk
+-include logic/versor/subdir_rules.mk
 -include logic/subdir_rules.mk
 -include driver/subdir_rules.mk
 -include bluerobin/subdir_rules.mk
@@ -147,7 +152,7 @@ all: ez430_chronos_datalogger_915MHz.out
 ez430_chronos_datalogger_915MHz.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" --cmd_file="C:\Users\Bruno\workspace original\ez430_chronos_datalogger\simpliciti\Applications\configuration\smpl_nwk_config.dat" --cmd_file="C:\Users\Bruno\workspace original\ez430_chronos_datalogger\simpliciti\Applications\configuration\End Device\smpl_config.dat"  -vmspx --abi=coffabi -O4 --opt_for_speed=0 -g --define=__CC430F6137__ --define=ISM_US --define=MRFI_CC430 --define=__CCE__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --call_assumptions=0 --gen_opt_info=2 --printf_support=minimal -z -m"ez430_chronos_datalogger_915MHz.map" --heap_size=80 --stack_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" -i"C:/ti/ccsv5/ccs_base/msp430/lib" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="ez430_chronos_datalogger_915MHz_linkInfo.xml" --rom_model -o "ez430_chronos_datalogger_915MHz.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/bin/cl430" --cmd_file="C:\Users\Bruno\git\tg-firmeware\ez430_chronos_datalogger\simpliciti\Applications\configuration\smpl_nwk_config.dat" --cmd_file="C:\Users\Bruno\git\tg-firmeware\ez430_chronos_datalogger\simpliciti\Applications\configuration\End Device\smpl_config.dat"  -vmspx --abi=coffabi -O4 --opt_for_speed=0 -g --define=__CC430F6137__ --define=ISM_US --define=MRFI_CC430 --define=__CCE__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU18 --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --call_assumptions=0 --gen_opt_info=2 --printf_support=minimal -z -m"ez430_chronos_datalogger_915MHz.map" --heap_size=80 --stack_size=80 --use_hw_mpy=F5 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.1/include" -i"C:/ti/ccsv5/ccs_base/msp430/lib" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="ez430_chronos_datalogger_915MHz_linkInfo.xml" --rom_model -o "ez430_chronos_datalogger_915MHz.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
@@ -155,8 +160,8 @@ ez430_chronos_datalogger_915MHz.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(MSP430_EXECUTABLE_OUTPUTS__QUOTED) "ez430_chronos_datalogger_915MHz.out"
-	-$(RM) "main.pp" "logic\acceleration.pp" "logic\altitude.pp" "logic\battery.pp" "logic\bluerobin.pp" "logic\clock.pp" "logic\datalog.pp" "logic\date.pp" "logic\menu.pp" "logic\rfbsl.pp" "logic\rfsimpliciti.pp" "logic\temperature.pp" "logic\user.pp" "driver\as.pp" "driver\bmp_as.pp" "driver\bmp_ps.pp" "driver\cma_as.pp" "driver\cma_ps.pp" "driver\ports.pp" "driver\ps.pp" "driver\radio.pp" "driver\rf1a.pp" 
-	-$(RM) "main.obj" "logic\acceleration.obj" "logic\altitude.obj" "logic\battery.obj" "logic\bluerobin.obj" "logic\clock.obj" "logic\datalog.obj" "logic\date.obj" "logic\menu.obj" "logic\rfbsl.obj" "logic\rfsimpliciti.obj" "logic\temperature.obj" "logic\user.obj" "driver\as.obj" "driver\bmp_as.obj" "driver\bmp_ps.obj" "driver\cma_as.obj" "driver\cma_ps.obj" "driver\ports.obj" "driver\ps.obj" "driver\radio.obj" "driver\rf1a.obj" 
+	-$(RM) "main.pp" "logic\versor\analise.pp" "logic\acceleration.pp" "logic\altitude.pp" "logic\battery.pp" "logic\bluerobin.pp" "logic\clock.pp" "logic\datalog.pp" "logic\date.pp" "logic\menu.pp" "logic\rfbsl.pp" "logic\rfsimpliciti.pp" "logic\status.pp" "logic\temperature.pp" "logic\user.pp" "driver\I2C.pp" "driver\as.pp" "driver\bmp_as.pp" "driver\bmp_ps.pp" "driver\cma_as.pp" "driver\cma_ps.pp" "driver\ports.pp" "driver\ps.pp" "driver\radio.pp" "driver\rf1a.pp" 
+	-$(RM) "main.obj" "logic\versor\analise.obj" "logic\acceleration.obj" "logic\altitude.obj" "logic\battery.obj" "logic\bluerobin.obj" "logic\clock.obj" "logic\datalog.obj" "logic\date.obj" "logic\menu.obj" "logic\rfbsl.obj" "logic\rfsimpliciti.obj" "logic\status.obj" "logic\temperature.obj" "logic\user.obj" "driver\I2C.obj" "driver\as.obj" "driver\bmp_as.obj" "driver\bmp_ps.obj" "driver\cma_as.obj" "driver\cma_ps.obj" "driver\ports.obj" "driver\ps.obj" "driver\radio.obj" "driver\rf1a.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

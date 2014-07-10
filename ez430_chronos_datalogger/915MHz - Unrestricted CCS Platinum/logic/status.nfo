@@ -19,7 +19,7 @@ extern void display_Esporte() is called from 0 sites in this file.
 	display_R_simb() (2 times)
 
 extern void display_Fora() is called from 0 sites in this file.
-    It appears to be inlineable (size = 26 units)
+    It appears to be inlineable (size = 32 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	display_chars() (1 times)
@@ -39,10 +39,11 @@ extern void display_R_simb() is called from 14 sites in this file.
 	display_symbol() (2 times)
 
 extern void display_Smart() is called from 0 sites in this file.
-    It appears to be inlineable (size = 43 units)
+    It appears to be inlineable (size = 85 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
-	display_chars() (3 times)
+	display_symbol() (1 times)
+	display_chars() (7 times)
 	display_R_simb() (2 times)
 
 extern void display_Sono() is called from 0 sites in this file.
@@ -107,7 +108,7 @@ extern void display_Sono() is called from 0 sites in this file.
 ==============================================================================
 
 extern void display_Smart() is called from 0 sites in this file.
-    It appears to be inlineable (size = 43 units)
+    It appears to be inlineable (size = 85 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	display_R_simb() (2 times)
@@ -123,7 +124,7 @@ extern void display_Lazer() is called from 0 sites in this file.
 ==============================================================================
 
 extern void display_Fora() is called from 0 sites in this file.
-    It appears to be inlineable (size = 26 units)
+    It appears to be inlineable (size = 32 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	display_R_simb() (2 times)

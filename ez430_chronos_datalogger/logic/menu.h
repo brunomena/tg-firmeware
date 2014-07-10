@@ -47,6 +47,7 @@
 
 struct menu
 {
+	//const struct menu *previuos;
     // Pointer to direct function (start, stop etc)
     void (*sx_function)(u8 line);
     // Pointer to sub menu function (change settings, reset counter etc)

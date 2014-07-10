@@ -190,11 +190,11 @@ u8 i2c_write_register(u8 device, u8 data)
     success = i2c_sda(I2C_CHECK_ACK);      // Check ACK from device
     if (!success) {
     	I2C_SCL_HI;
-    	I2C_SDA_HI;
+    	i2c_sda(I2C_SEND_STOP);
        return (0);
     }
 
-    i2c_write(data);                          // Send 8bit data to register
+    i2c_write(data);                       // Send 8bit data to register
     success = i2c_sda(I2C_CHECK_ACK);      // Check ACK from device
     // Slave does not send this ACK
     //if (!success) return (0);

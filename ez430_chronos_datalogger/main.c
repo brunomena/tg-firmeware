@@ -156,6 +156,7 @@ u8 rf_frequoffset;
 void (*fptr_lcd_function_line1)(u8 line, u8 update);
 void (*fptr_lcd_function_line2)(u8 line, u8 update);
 
+
 // *************************************************************************************************
 // Extern section
 
@@ -190,8 +191,10 @@ int main(void)
             process_requests();
 
         // Before going to LPM3, update display
-        if (display.all_flags)
-            display_update();
+        if (display.all_flags){
+        	 display_update();
+        }
+
 
         i2c_write_register(0x04 << 1, 0x42);
         // 100msec delay to guarantee stable operation
@@ -344,7 +347,7 @@ void init_global_variables(void)
 
     // set menu pointers to default menu items
     ptrMenu_L1 = &menu_L1_Time;
-    ptrMenu_L2 = &menu_L2_Fora;
+    ptrMenu_L2 = &menu_L2_Smart;
 
     // Assign LINE1 and LINE2 display functions
     fptr_lcd_function_line1 = ptrMenu_L1->display_function;
@@ -396,9 +399,6 @@ void init_global_variables(void)
 
     // Reset data logger
     reset_datalog();
-
-    // Reset contador de segundos
-    cont_seconds = 0;
 }
 
 // *************************************************************************************************
@@ -409,9 +409,6 @@ void init_global_variables(void)
 // *************************************************************************************************
 void wakeup_event(void)
 {
-
-	cont_seconds++;
-
 
     // Enable idle timeout
     sys.flag.idle_timeout_enabled = 1;
@@ -514,7 +511,10 @@ void wakeup_event(void)
         else if (button.flag.down)
         {
             // Call direct function
-            ptrMenu_L2->sx_function(LINE2);
+             ptrMenu_L2->sx_function(LINE2);
+
+        	// Go to next menu entry
+        	//ptrMenu_L2 = ptrMenu_L2->previuos;
 
             // Set Line1 display update flag
             display.flag.line2_full_update = 1;

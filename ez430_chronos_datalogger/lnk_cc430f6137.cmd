@@ -68,8 +68,8 @@ MEMORY
     INFOB                   : origin = 0x1900, length = 0x0080
     INFOC                   : origin = 0x1880, length = 0x0080
     INFOD                   : origin = 0x1800, length = 0x0080
-    DATALOG_MEMORY			: origin = 0x8000, length = 0x0400 //DATALOG_MEMORY			: origin = 0x8000, length = 0x1E00
-    FLASH                   : origin = 0x8400, length = 0x7B80 //FLASH                   : origin = 0x9E00, length = 0x6180
+    DATALOG_MEMORY			: origin = 0x8000, length = 0x1E00 //DATALOG_MEMORY			: origin = 0x8000, length = 0x1E00
+    FLASH                   : origin = 0x9E00, length = 0x6180 //FLASH                   : origin = 0x9E00, length = 0x6180
 /*  FLASH                   : origin = 0x8000, length = 0x7F80 */
     INT00                   : origin = 0xFF80, length = 0x0002
     INT01                   : origin = 0xFF82, length = 0x0002
